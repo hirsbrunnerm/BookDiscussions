@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+actor user
+actor "registered user" as ru
+ru --|> user
+
+rectangle BookDiscussions {
+    user -- (View discussion)
+    ru -- (Register book)
+    ru -- (Start discussion)
+    ru -- (Leave comment)
+    (Start discussion) .> (Register book) : include
+
+    ru -- (Mark book as read)
+    ru -- (Like book)
+}
+
+rectangle UserManagement {
+    user -- (Create account)
+    ru -- (Login)
+    user -- (Delete Account)
+}
+@enduml
